@@ -1,0 +1,202 @@
+/* === GLOBAL STYLE RESET === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+/* === NAVBAR === */
+.navbar {
+  background: rgba(0, 0, 0, 0.85); /* translucent black */
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100; /* sits above video */
+}
+
+.navbar a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.navbar a:hover {
+  background: red;
+  color: white;
+}
+
+.navbar a.active {
+  background: #b30000;
+  color: white;
+}
+
+/* Responsive nav for mobile */
+@media screen and (max-width: 600px) {
+  .navbar a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+/* === FULLSCREEN VIDEO === */
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1; /* keeps it behind all other elements */
+  filter: brightness(60%); /* darkens the video for readability */
+}
+
+/* === HERO CONTENT OVERLAY === */
+.content {
+  position: relative;
+  z-index: 10;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  margin-top: 150px; /* leaves space for navbar */
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent box behind text */
+  width: 80%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+
+#myBtn {
+  background: red;
+  border: none;
+  padding: 12px 20px;
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+#myBtn:hover {
+  background: #ff3333;
+}
+
+/* === TEAM PAGE (Meet the Team layout) === */
+.row {
+  display: flex;
+  justify-content: center;     /* centers all cards */
+  align-items: flex-start;     /* keeps tops aligned */
+  flex-wrap: wrap;             /* wraps on small screens */
+  gap: 25px;                   /* even space between cards */
+  margin-top: 100px;           /* clears navbar */
+  padding: 20px;
+}
+
+/* Each team card */
+.card {
+  background-color: #111;
+  color: white;
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
+  border: 1px solid #b30000;
+  border-radius: 8px;
+  width: 280px;                /* fixed card width */
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+/* Consistent image size and crop */
+.card img {
+  width: 100%;
+  height: 250px;               /* consistent height */
+  object-fit: cover;           /* crops evenly */
+  border-radius: 8px 8px 0 0;
+  display: block;
+}
+
+/* Text inside cards */
+.container {
+  padding: 16px;
+}
+
+.title {
+  color: #ff3333;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* === STATS PAGE (html3) === */
+.row {
+  margin: 20px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.card h3 {
+  font-size: 30px;
+  color: red;
+}
+
+.card p {
+  font-size: 16px;
+  color: white;
+}
+
+.stats-card {
+  background-color: #1a1a1a;
+  color: white;
+  margin: 10px;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
+}
+
+/* === ZEBRA TABLE === */
+.zebra-table {
+  margin: 40px auto;
+  width: 80%;
+  border-collapse: collapse;
+  background: #111;
+  color: white;
+  border: 1px solid #b30000;
+}
+
+.zebra-table th,
+.zebra-table td {
+  text-align: center;
+  padding: 12px;
+  border-bottom: 1px solid #333;
+}
+
+.zebra-table tr:nth-child(even) {
+  background-color: #1c1c1c;
+}
+
+.zebra-table th {
+  background-color: #b30000;
+  color: white;
+  font-weight: bold;
+}
+
+/* === UTILITY === */
+h1, h2 {
+  color: white;
+  text-align: center;
+  margin-top: 80px;
+}
